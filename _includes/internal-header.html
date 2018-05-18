@@ -1,0 +1,13 @@
+        <header class="site-header">
+            <nav>
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li {% if page.parent == "section-one" %}class="active"{% endif %} ><a {% if page.module == "one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Section 1</a></li>
+                    <li {% if page.parent == "section-two" %}class="active"{% endif %} ><a {% if page.module == "two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/module3.html">Section 2</a></li>
+                </ul>
+            </nav>
+            <div class="heading">
+                <div class="siteHeading">Phylogeny</div>
+                <p>for VCE Biology</p>
+            </div>
+        </header>

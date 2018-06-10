@@ -1,13 +1,23 @@
         <header class="site-header">
-            <nav>
-                <ul>
-                    <li><a href="{{ site.baseurl }}/">Home</a></li>
-                    <li {% if page.parent == "section-one" %}class="active"{% endif %} ><a {% if page.module == "one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Section 1</a></li>
-                    <li {% if page.parent == "section-two" %}class="active"{% endif %} ><a {% if page.module == "two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/module3.html">Section 2</a></li>
-                </ul>
-            </nav>
             <div class="heading">
-                <div class="siteHeading">Phylogeny</div>
+                <div class="siteHeading"><a href="{{ site.baseurl }}/">{{ site.siteHeading }}</a></div>
                 <p>for VCE Biology</p>
             </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="{{ site.baseurl }}/">Home</a></li>
+                    <li><a {% if page.parent == "section-one" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/">Section 1</a>
+                        <ul class="sub-menu {% if page.parent == "section-one" %}active{% endif %}">
+                            <li><a {% if page.module == "one" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/index.html">Module 1</a></li>
+                            <li><a {% if page.module == "two" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/module2.html">Module 2</a></li>
+                        </ul>
+                    </li>
+                    <li><a {% if page.parent == "section-two" %}class="active"{% endif %} href="{{ site.baseurl }}/sequence-one/module3.html">Section 2</a>
+                        <ul class="sub-menu {% if page.parent == "section-two" %}active{% endif %}">
+                            <li><a {% if page.module == "three" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/module3.html">Module 1</a></li>
+                            <li><a {% if page.module == "four" %}class="current"{% endif %} href="{{ site.baseurl }}/sequence-one/module4.html">Module 2</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
         </header>
